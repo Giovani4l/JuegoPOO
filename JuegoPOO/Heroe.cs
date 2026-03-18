@@ -14,8 +14,8 @@ namespace JuegoPOO
         
         public override int Atacar()
         {
-            // El héroe tiene un ataque especial que inflige daño adicional
-            return Ataque + 15; // Daño adicional de 15
+           
+            return Ataque + 15; 
         }
     }
 }

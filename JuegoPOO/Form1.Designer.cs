@@ -240,6 +240,7 @@
             Controls.Add(btnAtacar);
             Controls.Add(btnCrear);
             Controls.Add(btnCurar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             MinimumSize = new Size(800, 420);
             Name = "Form1";

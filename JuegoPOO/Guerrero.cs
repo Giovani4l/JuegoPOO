@@ -14,8 +14,8 @@ namespace JuegoPOO
         
         public override int Atacar()
         {
-            // El guerrero tiene un ataque especial que inflige daño adicional
-            return Ataque + 5; // Daño adicional de 5
+            
+            return Ataque + 5;
         }
     }
 

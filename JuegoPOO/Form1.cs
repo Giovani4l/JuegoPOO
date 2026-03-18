@@ -141,7 +141,7 @@ namespace JuegoPOO
             if (nivelActual < 5)
             {
                 
-                esBosFinal = false;
+               
                 int vidaEnemigo = 100 + (nivelActual * 30);      // Ej: Nivel 0 = 100, Nivel 4 = 220
                 int atqueEnemigo = 20 + (nivelActual * 5);       // Ej: Nivel 0 = 20, Nivel 4 = 40
                 enemigo = new Personaje($"Enemigo Nivel {nivelActual + 1}", vidaEnemigo, atqueEnemigo);
@@ -170,7 +170,11 @@ namespace JuegoPOO
         }
         private void btnAtacar_Click(object sender, EventArgs e)
         {
-            
+            if (cmbPersonaje.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un tipo de personaje.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             int daño = jugador.Atacar();
             enemigo.Vida -= daño;
             AppendLog($"Jugador hizo {daño} de daño");
@@ -184,6 +188,11 @@ namespace JuegoPOO
 
         private void btnEspecial_Click(object sender, EventArgs e)
         {
+            if (cmbPersonaje.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un tipo de personaje.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             int daño = jugador.Atacar() * 2;
             enemigo.Vida -= daño;
             AppendLog($"Jugador hizo {daño} de daño con ataque especial");
@@ -199,6 +208,11 @@ namespace JuegoPOO
 
         private void btnCurar_Click(object sender, EventArgs e)
         {
+            if (cmbPersonaje.SelectedIndex == -1)
+            {
+                MessageBox.Show("Por favor, selecciona un tipo de personaje.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             int curacion = random.Next(20, 40); 
             jugador.Vida = Math.Min(jugador.Vida + curacion, pbVidaJugador.Maximum);
             AppendLog($"Jugador se curó {curacion} de vida");

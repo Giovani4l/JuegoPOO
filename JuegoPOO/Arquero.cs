@@ -13,8 +13,8 @@ namespace JuegoPOO
         }
         public override int Atacar()
         {
-            // El arquero tiene un ataque especial que inflige daño adicional
-            return Ataque + 3; // Daño adicional de 3
+            
+            return Ataque + 3; 
         }
     }
 }

@@ -13,8 +13,8 @@ namespace JuegoPOO
         }
         public override int Atacar()
         {
-            // El mago tiene un ataque especial que inflige daño adicional
-            return Ataque + 10; // Daño adicional de 10
+            
+            return Ataque + 10; 
         }
     }
 }
